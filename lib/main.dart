@@ -20,23 +20,28 @@ class MyApp extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           child: Column(
-              children: [
-                Stack(
-                  children: [
+            children: [
+              Stack(children: [
                 Image.network(
                     "https://upload.wikimedia.org/wikipedia/commons/9/93/Plage_Bonneterres.JPG",
                     width: MediaQuery.of(context).size.width,
-                    height: 150,
+                    height: 170,
                     fit: BoxFit.cover),
-                const Center(
-                  child: CircleAvatar(
-                  backgroundImage: AssetImage("assets/images/avatar.png"),
-                  backgroundColor: Colors.grey,
-                  radius: 50,
-                ),
+                const Padding(
+                  padding: EdgeInsets.only(top:100.0),
+                  child: Center(
+                    child: CircleAvatar(
+                      backgroundImage: AssetImage("assets/images/avatar.png"),
+                      backgroundColor: Colors.grey,
+                      radius: 70,
+                    ),
+                  ),
                 ),
               ]),
-              ],
+              const Text("Leo", style: TextStyle(fontSize: 32.0, fontWeight: FontWeight.bold),),
+              const Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+              textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.w300),)
+            ],
           ),
         ),
       ),
